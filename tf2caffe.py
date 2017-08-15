@@ -13,7 +13,7 @@ var_to_shape_map = reader.get_variable_to_shape_map()
 
 cf_prototxt = "./VGG_ILSVRC_16_layers_deploy.prototxt"
 cf_model = "./vgg16.caffemodel"
-net = caffe.Net(cf_prototxt, caffe.TRAIN)
+
 
 def tensor4d_transform(tensor):
     return tensor.transpose((3, 2, 0, 1))
@@ -21,6 +21,7 @@ def tensor2d_transform(tensor):
     return tensor.transpose((1, 0))
 
 def tf2caffe(checkpoint_path,cf_prototxt,cf_model):
+    net = caffe.Net(cf_prototxt, caffe.TRAIN)
     for key_i in var_to_shape_map:
 
         try:
