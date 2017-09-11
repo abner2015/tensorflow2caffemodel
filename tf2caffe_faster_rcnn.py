@@ -4,7 +4,7 @@ sys.path.append('/home/root/py-faster-rcnn/caffe-fast-rcnn/python')
 sys.path.append('/home/root/py-faster-rcnn/lib')
 import caffe
 import numpy as np
-import cv2
+
 sess = tf.Session(config=tf.ConfigProto(allow_soft_placement=True))
 import trans_tools as trans
 
